@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {
-    public Client findByOrderByIdDesc();
-}
+public interface ClientRepository extends JpaRepository<Client, Long> {}

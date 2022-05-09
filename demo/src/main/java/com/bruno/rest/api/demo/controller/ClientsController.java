@@ -21,11 +21,13 @@ public class ClientsController {
 
     @GetMapping
     public List<Client> getClients() {
+        System.out.println("Bateu uma onda forte, to vendo macado em cima do poste.");
         return clientRepository.findAll();
     }
 
     @GetMapping("/{id}")
     public Client getClient(@PathVariable Long id) {
+
         return clientRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
