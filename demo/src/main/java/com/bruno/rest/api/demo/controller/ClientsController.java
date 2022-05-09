@@ -21,7 +21,7 @@ public class ClientsController {
 
     @GetMapping
     public List<Client> getClients() {
-        System.out.println("Bateu uma onda forte, to vendo macado em cima do poste.");
+        System.out.println("Bateu uma onda forte, to vendo macado, em cima do poste.");
         return clientRepository.findAll();
     }
 
@@ -44,7 +44,7 @@ public class ClientsController {
         currentClient.setName(client.getName());
         currentClient.setEmail(client.getEmail());
         currentClient = clientRepository.save(client); //Jeitinho brasileiro a partir daqui, cuidado
-        clientRepository.deleteById(currentClient.getId());
+//        clientRepository.deleteById(currentClient.getId());
         return ResponseEntity.ok(clientRepository.findById(id));
     }
 
