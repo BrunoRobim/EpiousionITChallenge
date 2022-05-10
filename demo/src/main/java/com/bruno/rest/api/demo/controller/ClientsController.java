@@ -43,8 +43,8 @@ public class ClientsController {
         Client currentClient = clientRepository.findById(id).orElseThrow(RuntimeException::new);
         currentClient.setName(client.getName());
         currentClient.setEmail(client.getEmail());
-        currentClient = clientRepository.save(client); //Jeitinho brasileiro a partir daqui, cuidado
-//        clientRepository.deleteById(currentClient.getId());
+        currentClient = clientRepository.save(client);
+//        clientRepository.deleteById(currentClient.getId()); //Jeitinho brasileiro a partir daqui, cuidado
         return ResponseEntity.ok(clientRepository.findById(id));
     }
 

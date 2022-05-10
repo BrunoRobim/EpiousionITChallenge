@@ -43,7 +43,7 @@ class ClientList extends Component {
                 <td>{client.email}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/clients/" + client.id}>Edit</Button>
+                        <Button size="sm" color="primary" href={"/clients/" + client.id}>Edit</Button>
                         <Button size="sm" color="danger" onClick={() => this.remove(client.id)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -51,11 +51,11 @@ class ClientList extends Component {
         });
 
         return (
-            <div>
+            <div className='position-relative'>
                 <AppNavbar />
                 <Container fluid>
-                    <div className="float-right">
-                        <Button color="success" tag={Link} to="/clients/new">Add Client</Button>
+                    <div className="float-right mr-10 mt-2">
+                        <Button color="success" className="position-absolute top-25 end-0" href="/clients/new">Add Client</Button>
                     </div>
                     <h3>Clients</h3>
                     <Table className="mt-4">

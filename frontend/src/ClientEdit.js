@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import AppNavbar from './AppNavbar';
+import { useState } from 'react';
 
 class ClientEdit extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            item: this.emptyItem
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
@@ -33,6 +43,7 @@ class ClientEdit extends Component {
             },
             body: JSON.stringify(item),
         });
+        console.log("Poh chegampos até aqui");
         this.props.history.push('/clients');
     }
 
@@ -41,14 +52,7 @@ class ClientEdit extends Component {
         email: ''
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            item: this.emptyItem
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+
 
     render() {
         const { item } = this.state;
@@ -70,8 +74,8 @@ class ClientEdit extends Component {
                             onChange={this.handleChange} autoComplete="email" />
                     </FormGroup>
                     <FormGroup>
-                        <Button color="primary" type="submit">Save</Button>{' '}
-                        <Button color="secondary" tag={Link} to="/clients">Cancel</Button>
+                        <Button color="primary" href="/clients" onClick={(e) => this.handleSubmit(e)} >Save</Button>{' '}
+                        <Button color="secondary" href="/clients">Cancel</Button>
                     </FormGroup>
                 </Form>
             </Container>
