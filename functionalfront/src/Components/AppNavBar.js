@@ -8,27 +8,33 @@ const AppNav = () => {
   let navigate = useNavigate();
   return (
     <>
-      <nav class="navbar bg-dark">
-        <form class="container-fluid justify-content-start gap-3 ms-4">
-          <button
-            class="btn btn-outline-success me-2"
-            type="button"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
-          </button>
-          <button
-            class="btn btn-outline-success me-2"
-            type="button"
-            onClick={() => {
-              navigate("clients");
-            }}
-          >
-            Lista de Clientes
-          </button>
-        </form>
+      <nav className="navbar bg-dark">
+        <div className="container">
+
+          <form className="container-fluid justify-content-start">
+            <button
+              className="btn btn-outline-success me-2"
+              type="button"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </button>
+            <button
+              className="btn btn-outline-success me-2"
+              type="button"
+              onClick={() => {
+                navigate("clients");
+              }}
+            >
+              Lista de Clientes
+            </button>
+            <button type="button" className="btn btn-outline-success me-2" onClick={() => {
+              navigate("cadastrar");
+            }}>Cadastrar</button>
+          </form>
+        </div>
       </nav>
     </>
   );
