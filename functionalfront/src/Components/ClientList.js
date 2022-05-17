@@ -18,7 +18,6 @@ const ClientList = () => {
             });
     }, []);
 
-    console.log("teste de importação");
     return (
         <>
             <div className="container">
@@ -34,7 +33,7 @@ const ClientList = () => {
                                         type="button"
                                         className="btn btn-primary m-2"
                                         onClick={() => {
-                                            navigate("/1");
+                                            navigate("/");
                                         }}
                                     >
                                         Editar
